@@ -9,7 +9,28 @@ void fill(int arr[], int size) {
 
 }
 
-
+void check(int arr[], int size) {
+    int temp, temp2;
+    int matches = 1;
+    while (matches != 0) {
+        matches = 0;
+        for (int i = 0; i < size; i++) {
+            temp = arr[i];
+            for (int j = i + 1; j < size; j++) {
+                temp2 = arr[j];
+                if (temp == temp2) {
+                    arr[i] += rand() % 3;
+                    matches++;
+                    if (arr[i] >= 10) {
+                        arr[i] -= 5;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
 
 
 void print(int arr[], int size) {
@@ -77,6 +98,9 @@ int main()
     int plauerinput, res = 1, counter = 0, n = 1;
     fill(number, size);  
     print(number, size);
+    check(number, size);
+    print(number, size);
+    
     
     cin >> plauerinput;
     inpt(numberplayer, size, plauerinput);
